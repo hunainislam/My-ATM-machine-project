@@ -2,6 +2,7 @@
 import inquirer from "inquirer";
 let myBalance = 10000; //Doller
 let myPin = 1234;
+console.log("Your current balance is " + myBalance);
 let pinAnswer = await inquirer.prompt([
     {
         name: "pin",
@@ -20,7 +21,6 @@ if (pinAnswer.pin === myPin) {
             choices: ["withdraw", "check balance"]
         }
     ]);
-    console.log(operationAns);
     if (operationAns.operation === "withdraw") {
         let amountAns = await inquirer.prompt([
             {
